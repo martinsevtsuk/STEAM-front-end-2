@@ -27,5 +27,43 @@
     background-color: #e2e1e1;
     border-radius: 1vh;
     margin-top: 2vh;
+    padding: 4vh;
+    display: flex;
+  box-sizing: border-box;
 
+
+    flex-direction: column;
+        gap: 2vh;
+
+}
+.people-data-container{
+    height: 9vh;
+    display: flex;
+    flex-direction: column;
+}
+.people-data-title{
+    flex: 1;
+    text-align: start;
+    font-size: 20px;
+}
+.people-data{
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.people-data-number{
+    font-size: 32px;
+    font-weight: 300;
+}
+.people-data-recommendation{
+    margin-left: 5%;
+    display: flex;
+    color: rgb(63, 63, 63);
+    font-weight: 300;
+}
+.music-file-drop-container{
+    height: 6vh;
+    display: flex;
+    flex-direction: column;
 }

@@ -45,9 +45,8 @@ function MainPage(props){
 
             <div className='data-container'>
                 {data && <div className='data-left-container'>
-                    <SmallDataBox title="Temperature" data={data['temp']}/>
-                    <SmallDataBox title="Humidity" data={data['hum']}/>
                     <SmallDataBox title="Camera detected people" data={data['camera']}/>
+                    <SmallDataBox title="Distance" data={data['temp']}/>
 
                 </div>}
                  <div className='data-right-container'>
