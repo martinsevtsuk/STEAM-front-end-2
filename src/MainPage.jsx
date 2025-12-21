@@ -17,7 +17,9 @@ function MainPage(props){
     // Define the fetch function
         const fetchData = async () => {
         try {
-            const response = await fetch(serverDomain + "/api/general/all", {method:"get"});
+             const url = new URL("/api/general/all", serverDomain);
+            url.searchParams.append("number_limit", '10');
+            const response = await fetch(url.toString(), {method:"get"});
             const result = await response.json();
             setData(result);
             console.log(result['camera'])
