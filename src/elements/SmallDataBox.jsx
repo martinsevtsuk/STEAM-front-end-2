@@ -1,7 +1,11 @@
 import Chart from "react-apexcharts";
 import "../css/SmallDataBox.css";
+import { useContext, useEffect, useState } from "react";
 
 function SmallDataBox(props) {
+
+
+    const [levelProps, setLevelProps] = useState([])
 
     const chartOptions = {
         chart: {
@@ -42,6 +46,32 @@ function SmallDataBox(props) {
             })) || [],
         },
     ];
+
+
+    useEffect(()=>{
+        if (!props.data[0].number)return;
+        let size = props.roomSize;
+        let vol = size['pikkus'] * size['laius'] * size['kõrgus']
+        if (props.data[0].number < vol / 10){
+            setLevelProps({
+                "title": "Hea",
+                "class": "green-gradient"
+            })
+
+        } else if (props.data[0].number < vol / 8){
+            setLevelProps({
+                "title": "Mõõdukas",
+                "class": "yellow-gradient"
+            })
+
+        } else {
+            setLevelProps({
+                "title": "Halb",
+                "class": "red-gradient"
+            })
+
+        }
+    },[props.roomSize, props.data])
 return (
         <div className="small-data-box-container">
             <div className="data-box-title-container">
@@ -57,17 +87,17 @@ return (
                             </p>
                         )}
                     </div>
-                    <div className="data-box-sensor-interpretation-container">
+                    {props.showBar && props.data && props.data.length > 0 &&<div className="data-box-sensor-interpretation-container">
                         <div className="data-box-sensor-text-level">
-                            <p className="data-box-sensor-text">Moderate</p>
+                            <p className="data-box-sensor-text">{levelProps['title']}</p>
                         </div>
                         <div className="data-box-sensor-color-level">
-                            <div className="data-box-sensor-color"></div>
+                            <div className={"data-box-sensor-color " + levelProps['class']} ></div>
                         </div>
-                    </div>
+                    </div>}
                 </div>
 
-                <div className="data-box-graph-container">
+              {props.data && props.data.length > 0 && <div className="data-box-graph-container">
                     <p className="data-box-graph-title">Viimase aja muutus</p>
                     <div className="data-box-graph">
                        <div style={{ width: "95%", height: "100%" }}>
@@ -80,7 +110,7 @@ return (
                          />
                          </div>
                     </div>
-                </div>
+                </div>}
             </div>
         </div>
     );

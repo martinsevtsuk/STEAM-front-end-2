@@ -13,6 +13,10 @@ function MainPage(props){
     const [data, setData] = useState(null);
 
 
+    const [roomSize, setRoomSize] = useState({"pikkus": 1, "laius": 1, "kõrgus": 1})
+
+
+
     useEffect(() => {
     // Define the fetch function
         const fetchData = async () => {
@@ -38,6 +42,8 @@ function MainPage(props){
         return () => clearInterval(intervalId);
     }, []);
 
+  
+
 
     return (<>
     <Header />
@@ -47,12 +53,12 @@ function MainPage(props){
 
             <div className='data-container'>
                 {data && <div className='data-left-container'>
-                    <SmallDataBox title="Camera detected people" data={data['camera']}/>
-                    <SmallDataBox title="Distance" data={data['temp']}/>
+                    <SmallDataBox showBar={true} roomSize={roomSize}  title="Camera detected people" data={data['camera']}/>
+                    <SmallDataBox roomSize={roomSize}  showBar={false} title="Distance" data={[{"number": 1.7}]}/>
 
                 </div>}
                  <div className='data-right-container'>
-                    <BigDataBox setData={setData}/>
+                    {data && data['camera'] && <BigDataBox cameraData={data['camera']} roomSize={roomSize} setRoomSize={setRoomSize} setData={setData}/>}
                 </div>
             </div>
         </div>

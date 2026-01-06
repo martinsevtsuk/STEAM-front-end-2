@@ -58,7 +58,6 @@
 .data-box-sensor-color{
     height: 3px;
     width: 70%;
-    background-image: linear-gradient(90deg, #4ADF3C, #669F61);
 }
 
 .data-box-sensor-data-container{
@@ -92,4 +91,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.green-gradient{
+    background: linear-gradient(135deg, #2ecc71, #a8e063);
+}
+.yellow-gradient{
+background: linear-gradient(135deg, #f9d423, #f39c12);
+}
+.red-gradient{
+background: linear-gradient(135deg, #e74c3c, #c0392b);
 }

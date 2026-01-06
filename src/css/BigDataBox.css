@@ -44,7 +44,7 @@
 .people-data-title{
     flex: 1;
     text-align: start;
-    font-size: 20px;
+    font-size: 18px;
 }
 .people-data{
     flex: 2;
@@ -53,7 +53,7 @@
     align-items: center;
 }
 .people-data-number{
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 300;
 }
 .people-data-recommendation{
@@ -63,7 +63,116 @@
     font-weight: 300;
 }
 .music-file-drop-container{
-    height: 6vh;
     display: flex;
     flex-direction: column;
+    gap: 1vh;
+}
+.upload-file-button{
+    width: 30%;
+    aspect-ratio: 7.5/1;
+    border-radius: 8px;
+
+    border: none;
+}
+.upload-file-button:hover{
+     transform: scale(1.02);
+    filter: brightness(0.99);
+    cursor: pointer;
+}
+.upload-file-input::file-selector-button{
+    width: 20%;
+        aspect-ratio: 7.5/1;
+          border-radius: 8px;
+    border: none;
+    margin-right: 2%;
+}
+.upload-file-input::file-selector-button:hover{
+    transform: scale(1.02);
+    filter: brightness(0.99);
+    cursor: pointer;
+}
+.music-file-title{
+    flex: 1;
+    text-align: start;
+    font-size: 18px;
+    margin-bottom: 1vh;
+}
+
+
+.room-size-container{
+    margin-top: 1vh;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.room-size-title{
+    flex: 1;
+    text-align: start;
+    font-size: 18px;
+    margin-bottom: 1vh;
+}
+.room-size-settings-container{
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 1vh;
+    justify-content: space-between;
+}
+
+.room-size-button-container{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.room-size-button{
+    height: 50%;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+}
+.room-size-button:hover{
+     transform: scale(1.02);
+    filter: brightness(0.99);
+    cursor: pointer;
+}
+.room-size-info-container{
+    width: 40%;
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
+}
+.room-size-info-container p{
+    font-size: 14px;
+    color: rgb(65, 65, 65);
+}
+.room-size-dialog{
+    flex: 1;
+}
+.room-size-dialog{
+    display: flex;
+    flex-direction: column;
+}
+.room-size-dialog-title{
+    text-align: start;
+    font-size: 18px;
+    margin-bottom: 1vh;
+}
+.room-size-new-container{
+    margin-top: 1vh;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex: 4;
+    gap: 3%;
+}
+.room-size-new-container input{
+    width: 20%;
+    aspect-ratio: 6/1;
+    border: none;
+    border-radius: 8px;
+    padding: 4px;
 }
