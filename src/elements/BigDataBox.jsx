@@ -9,9 +9,9 @@ function BigDataBox(props){
     function onChangeButtonClick(){
         if (showDialog){
             let newData = {
-                "pikkus": document.getElementById("length").value,
-                "laius": document.getElementById("width").value,
-                "kõrgus": document.getElementById("height").value
+                "pikkus": (!document.getElementById("length").value || document.getElementById("length").value == 0) ? 1 : document.getElementById("length").value,
+                "laius": (!document.getElementById("width").value || document.getElementById("width").value == 0) ? 1 : document.getElementById("width").value,
+                "kõrgus": (!document.getElementById("height").value || document.getElementById("height").value == 0) ? 1 :  document.getElementById("height").value
             }
             props.setRoomSize(newData)
         }
@@ -65,14 +65,14 @@ function BigDataBox(props){
                 <button className='reset-button' onClick={()=>{
                     props.setData({"camera": [{"number": 0}]})
                     props.setRoomSize({"pikkus": 1, "laius": 1, "kõrgus": 1})
-                }}>Reset</button>
+                }}>Lähtesta</button>
             </div>
             <div className='big-data-content'>
                 <div className='people-data-container'>
                     <p className='people-data-title'>Inimesi toas:</p>
                     <div className='people-data'>
                         {props.cameraData && props.cameraData.length > 0 && <p className='people-data-number'>{props.cameraData[0].number}</p>}
-                        <p className='people-data-recommendation'>Rekomendeeritud maksimaalne arv inimesi: {calculateRecommendation()}</p>
+                        <p className='people-data-recommendation'>Soovitatud maksimaalne arv inimesi: {calculateRecommendation()}</p>
                     </div>
                 </div>
                 <div className='music-file-drop-container'>

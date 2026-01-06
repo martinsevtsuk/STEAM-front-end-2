@@ -53,8 +53,8 @@ function MainPage(props){
 
             <div className='data-container'>
                 {data && <div className='data-left-container'>
-                    <SmallDataBox showBar={true} roomSize={roomSize}  title="Camera detected people" data={data['camera']}/>
-                    <SmallDataBox roomSize={roomSize}  showBar={false} title="Distance" data={[{"number": 1.7}]}/>
+                    <SmallDataBox showBar={true} roomSize={roomSize}  title="Kaameraga tuvastatud inimesed" data={data['camera']}/>
+                    <SmallDataBox roomSize={roomSize}  showBar={false} title="Kaugus" data={[{"number": 1.7}]}/>
 
                 </div>}
                  <div className='data-right-container'>

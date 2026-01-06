@@ -39,7 +39,7 @@ function SmallDataBox(props) {
 
     const chartSeries = [
         {
-            name: "Num people",
+            name: "Inimesed",
             data: props.data?.map(item => ({
                 x: new Date(item.trackTime).getTime(),
                 y: item.number,
