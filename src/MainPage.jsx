@@ -110,7 +110,7 @@ function MainPage(props){
                         roomSize={roomSize} 
                         showBar={false} 
                         title="Kaugus (cm)" 
-                        data={data['ultrasound'] || [{number: 0}]}
+                        data={data['distance'] || [{number: 0}]}
                     />
                     <SecurityPanel
                         isArmed={isArmed}

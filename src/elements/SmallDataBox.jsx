@@ -39,10 +39,10 @@ function SmallDataBox(props) {
 
     const chartSeries = [
         {
-            name: "Inimesed",
+            name: props.title === "Kaugus" ? "Kaugus (m)" : "Inimesed",
             data: props.data?.map(item => ({
                 x: new Date(item.trackTime).getTime(),
-                y: item.number,
+                y: (props.title === "Kaugus (cm)" ? item.distance / 100 : item.number) + "cm"
             })) || [],
         },
     ];
@@ -83,7 +83,7 @@ return (
                     <div className="data-box-sensor-data-container">
                         {props.data && props.data.length > 0 && (
                             <p className="data-box-sensor-data">
-                                {props.data[0].number}
+                                {props.title === "Kaugus (cm)" ? ((props.data[0].distance / 100) + "m") : props.data[0].number}
                             </p>
                         )}
                     </div>
