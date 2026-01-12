@@ -1,0 +1,165 @@
+.security-panel-container {
+    flex: 2;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.security-panel-header {
+    margin-bottom: 4px;
+}
+
+.security-title-container {
+    flex: 1;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+
+.security-panel-title {
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 4px;
+    text-align: start;
+}
+
+.security-content-container {
+    flex: 5;
+    background-color: #e2e1e1;
+    display: flex;
+    padding: 1vw;
+    flex-direction: column;
+    border-radius: 0.6vh;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+/* Status Display */
+.security-status {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.security-status-text {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.status-disarmed {
+    background-color: #6c757d;
+    color: white;
+}
+
+.status-arming {
+    background: linear-gradient(135deg, #f9d423, #f39c12);
+    color: black;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.status-armed {
+    background: linear-gradient(135deg, #2ecc71, #a8e063);
+    color: white;
+}
+
+.status-alert {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    animation: alertPulse 0.5s ease-in-out infinite;
+}
+
+/* Toggle Button */
+.security-toggle-button {
+    width: 100%;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: none;
+    letter-spacing: normal;
+    background-color: #53626B;
+    color: white;
+    box-sizing: border-box;
+}
+
+.security-toggle-button:hover:not(:disabled) {
+    transform: scale(1.02);
+    filter: brightness(0.99);
+}
+
+.security-toggle-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.security-toggle-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.alert-button {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    animation: buttonPulse 0.5s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes alertPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.9;
+    }
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(220, 53, 69, 0.6);
+    }
+}
+
+/* Red Flash Animation for whole page */
+@keyframes redFlash {
+    0%, 100% {
+        background-color: rgba(220, 53, 69, 0);
+    }
+    50% {
+        background-color: rgba(220, 53, 69, 0.4);
+    }
+}
+
+/* Global alert overlay class to be applied to App */
+.alert-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation: redFlash 0.8s ease-in-out infinite;
+    z-index: 9999;
+}

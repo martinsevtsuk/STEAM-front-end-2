@@ -1,6 +1,6 @@
 .main-page-container{
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     background-color: #53626B;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
 
 .data-container{
     margin-top: 2vw;
-    height: 70vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -26,9 +26,11 @@
 }
 .data-left-container{
     padding-top: 2vh;
+    padding-bottom: 2vh;
     flex: 1.5;
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 .data-right-container{
     flex: 2;
