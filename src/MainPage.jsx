@@ -46,9 +46,9 @@ function MainPage(props){
 
     // Motion detection logic
     useEffect(() => {
-        if (!isArmed || !data || !data.ultrasound || !data.ultrasound.length) return;
+        if (!isArmed || !data || !data.distance || !data.distance.length) return;
         
-        const currentDistance = data.ultrasound[0].number;
+        const currentDistance = data.distance[0].distance;
         
         // On first armed state, set baseline
         if (baselineDistance === null) {
